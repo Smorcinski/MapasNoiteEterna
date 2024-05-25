@@ -8,7 +8,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 var info = this.dataset.info;
                 tooltip.textContent = info;
                 tooltip.style.display = 'block';
-                tooltip.style.top = (event.clientY - 200) + 'px'; // Posiciona a caixa branca verticalmente
+                tooltip.style.width = '100px'; // Define a largura da caixa branca
+                tooltip.style.height = '50px'; // Define a altura da caixa branca
+                tooltip.style.top = (event.clientY - 60) + 'px'; // Posiciona a caixa branca verticalmente (ajuste para centralizar verticalmente)
                 tooltip.style.left = (event.clientX + 20) + 'px'; // Posiciona a caixa branca horizontalmente
             });
         });
