@@ -39,7 +39,7 @@ body, html {
 }
 
 .poi {
-	z-index: 3;
+	z-index: 4;
     position: absolute;
     width: 10px; /* Define o tamanho do círculo */
     height: 10px; /* Define o tamanho do círculo */
@@ -52,6 +52,7 @@ body, html {
     background-color: darkred; /* Cor ao passar o mouse por cima */
 }
 .card {
+			z-index: 3;
             display: none;
             position: absolute;
             background-color: transparent;
