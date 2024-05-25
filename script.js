@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const tooltip = document.getElementById('tooltip');
     var pois = document.querySelectorAll('.poi');
-	
+        var tooltip = document.getElementById('tooltip');
+
         pois.forEach(function(poi) {
-            poi.addEventListener('click', function() {
+            poi.addEventListener('click', function(event) {
+                event.stopPropagation(); // Impede a propagação do evento para evitar o fechamento imediato do tooltip
                 var info = this.dataset.info;
-                var tooltip = document.getElementById('tooltip');
                 tooltip.textContent = info;
                 tooltip.style.display = 'block';
                 tooltip.style.top = (event.clientY - 200) + 'px'; // Posiciona a caixa branca verticalmente
@@ -14,9 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         document.addEventListener('click', function(event) {
-            var tooltip = document.getElementById('tooltip');
-            if (!event.target.classList.contains('poi')) {
-                tooltip.style.display = 'none';
-            }
+            tooltip.style.display = 'none'; // Fecha o tooltip quando ocorre um clique fora dos POIs
         });
 });
