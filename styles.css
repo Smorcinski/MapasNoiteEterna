@@ -9,9 +9,6 @@ body, html {
     position: relative;
     width: 100%;
     height: auto; /* Altura será ajustada automaticamente */
-    background-image: url('nimor.png'); /* caminho para a sua imagem */
-    background-size: 100% auto; /* Ajuste a largura para 100% e mantenha a proporção da altura */
-    background-repeat: no-repeat; /* Não repetir a imagem */
     overflow: auto; /* Adicionamos overflow: auto para permitir rolagem vertical */
 }
 
