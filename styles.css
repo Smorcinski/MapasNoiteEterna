@@ -40,9 +40,10 @@ body, html {
     background-color: white;
     color: black;
     padding: 10px;
-    width: 200px;
+    width: 400px;
     height: 200px;
-    border: 1px solid black;
     display: none;
     z-index: 10;
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
