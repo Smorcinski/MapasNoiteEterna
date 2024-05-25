@@ -6,7 +6,7 @@ body, html {
 }
 
 .map-container {
-    position: absolute;
+    position: relative;
     width: 1330px;
     height: 1875px; /* Altura será ajustada automaticamente */
     overflow: hidden; /* Adicionamos overflow: auto para permitir rolagem vertical */
@@ -16,10 +16,10 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: none; /* Permite que eventos do mouse passem através da imagem */
+    pointer-events: all; /* Permite que eventos do mouse passem através da imagem */
 }
 
 .hidden-map-overlay:hover {
