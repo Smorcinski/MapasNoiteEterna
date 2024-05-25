@@ -14,6 +14,19 @@
 		<div class="poi" data-info="Circulo Preto 94" style="top: 68.21%; left: 27.99%;"></div>
     </div>
     <div id="tooltip" class="tooltip"></div>
-    <script src="script.js"></script>
+	<script>
+        document.addEventListener('mousemove', function(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+            var width = window.innerWidth;
+            var height = document.querySelector('.container').clientHeight;
+
+            var xPercent = (x / width) * 100;
+            var yPercent = (y / height) * 100;
+
+            document.getElementById('coordinates').textContent = 
+                'X: ' + x.toFixed(2) + ' (' + xPercent.toFixed(2) + '%), Y: ' + y.toFixed(2) + ' (' + yPercent.toFixed(2) + '%)';
+        });
+    </script>
 </body>
 </html>
