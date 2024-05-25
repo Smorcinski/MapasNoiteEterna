@@ -31,10 +31,13 @@ body, html {
     cursor: pointer;
     transform: translate(-50%, -50%);
 }
+.poi:hover {
+    background-color: darkred; /* Cor ao passar o mouse por cima */
+}
 .card {
             display: none;
             position: absolute;
-            background-color: white;
+            background-color: transparent;
             width: 400px;
             height: 200px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
