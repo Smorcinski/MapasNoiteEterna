@@ -15,16 +15,17 @@ body, html {
     position: absolute;
     top: 0;
     left: 0;
-    width: 1330px;
-    height: 1875px;
+    width: auto;
+    height: 100%;
     opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 2; /* Colocamos um valor de z-index maior para as imagens sobrepostas */
+    pointer-events: auto;
+    z-index: 2;
 }
 
 .hidden-map-overlay:hover {
     opacity: 1;
+    pointer-events: auto;
 }
 
 
