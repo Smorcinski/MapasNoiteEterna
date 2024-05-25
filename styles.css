@@ -5,6 +5,13 @@ body, html {
     overflow: auto;
 }
 
+.download-button-container {
+    position: absolute;
+    top: 10px; /* Ajuste conforme necessário para definir a distância do topo */
+    left: 10px; /* Ajuste conforme necessário para definir a distância da esquerda */
+}
+
+
 .map-container {
     position: absolute;
     width: 1330px;
