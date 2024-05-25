@@ -13,6 +13,8 @@ body, html {
 }
 
 #map {
+	z-index: 1; /* Defina um valor de z-index menor para o mapa */
+    /* Outros estilos do mapa */
     width: 100%; /* Definimos a largura do mapa como 100% da largura da página */
     height: auto; /* Mantemos a altura automática para manter a proporção do mapa */
     display: block;
@@ -33,6 +35,8 @@ body, html {
 }
 
 .tooltip {
+	z-index: 2; /* Defina um valor de z-index maior para a caixa branca */
+    /* Outros estilos da caixa branca */
     position: absolute;
     background-color: white;
     color: black;
