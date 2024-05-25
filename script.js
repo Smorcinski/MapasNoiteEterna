@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			event.stopPropagation();
 			var target = this.dataset.target;
 			var mouseX = event.clientX;
-			var mouseY = event.clientY;
+			var mouseY = event.clientY + window.scrollY; // Adiciona o deslocamento vertical da página
 			cards.forEach(function(card) {
 				if (card.id === target) {
 					card.style.display = 'block';

@@ -26,7 +26,7 @@ body, html {
     position: absolute;
     width: 10px; /* Define o tamanho do círculo */
     height: 10px; /* Define o tamanho do círculo */
-    background-color: red; /* Define a cor do círculo */
+    background-color: black; /* Define a cor do círculo */
     border-radius: 50%; /* Faz com que o elemento seja um círculo */
     cursor: pointer;
     transform: translate(-50%, -50%);
