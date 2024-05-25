@@ -42,6 +42,15 @@ body, html {
             padding: 10px;
             font-weight: bold;
 }
+.link-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cobrindo toda a largura do card */
+    height: 100%; /* Cobrindo toda a altura do card */
+    opacity: 0; /* Torna o botão invisível */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
 		
 .tooltip {
         display: none;

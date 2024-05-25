@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
 					card.style.display = 'block';
 					card.style.top = mouseY + 'px'; // Define a posição vertical do card
 					card.style.left = mouseX + 'px'; // Define a posição horizontal do card
+
+					// Adiciona um evento de clique ao botão dentro do card
+					var linkButton = card.querySelector('.link-button');
+					if (linkButton) {
+						linkButton.addEventListener('click', function() {
+							window.location.href = 'https://noiteterna-rpg.fandom.com/pt-br/wiki/Porto_dos_Ventos'; // Substitua 'pagina.html' pelo URL real da página desejada
+						});
+					}
 				} else {
 					card.style.display = 'none';
 				}
