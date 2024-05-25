@@ -2,18 +2,21 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow: hidden;
 }
 
 .map-container {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: auto; /* Adicionamos overflow: auto para permitir rolagem vertical */
 }
 
 #map {
-    position: absolute;
-    width: 100%;
-    height: auto;
+	z-index: 1; /* Defina um valor de z-index menor para o mapa */
+    /* Outros estilos do mapa */
+    width: 100%; /* Definimos a largura do mapa como 100% da largura da página */
+    height: auto; /* Mantemos a altura automática para manter a proporção do mapa */
     display: block;
     margin: auto;
     object-fit: contain;
@@ -21,21 +24,25 @@ body, html {
 
 .poi {
     position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: red;
-    border-radius: 50%;
+    width: 200px; /* Define o tamanho do círculo */
+    height: 200px; /* Define o tamanho do círculo */
+    background-color: red; /* Define a cor do círculo */
+    border-radius: 50%; /* Faz com que o elemento seja um círculo */
     cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
 }
 
 .tooltip {
-    position: fixed; /* Alterado para 'fixed' para garantir que a caixa branca acompanhe o cursor */
+    /* Outros estilos da caixa branca */
+    position: absolute;
     background-color: white;
     color: black;
     padding: 10px;
-    width: 200px; /* Definindo a largura da caixa branca como 200 pixels */
-    height: 200px; /* Definindo a altura da caixa branca como 200 pixels */
+    width: 200px;
+    height: 200px;
     border: 1px solid black;
     display: none;
-    z-index: 999; /* Alterado para um valor alto para garantir que a caixa branca esteja na frente de outros elementos */
+    z-index: 10;
 }
