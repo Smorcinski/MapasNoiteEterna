@@ -11,23 +11,6 @@ body, html {
     height: 1875px; /* Altura será ajustada automaticamente */
     overflow: hidden; /* Adicionamos overflow: auto para permitir rolagem vertical */
 }
-.hidden-map-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: auto;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: auto;
-    z-index: 2;
-}
-
-.hidden-map-overlay:hover {
-    opacity: 1;
-    pointer-events: auto;
-}
-
 
 #map {
 	z-index: 1; /* Defina um valor de z-index menor para o mapa */
