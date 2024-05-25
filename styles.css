@@ -35,8 +35,8 @@ body, html {
             display: none;
             position: absolute;
             background-color: white;
-            width: 400px;
-            height: 200px;
+            width: 200px;
+            height: 100px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border: none;
             padding: 10px;
