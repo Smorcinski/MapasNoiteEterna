@@ -22,8 +22,8 @@ body, html {
 
 .poi {
     position: absolute;
-    width: 50px; /* Define o tamanho do círculo */
-    height: 50px; /* Define o tamanho do círculo */
+    width: 5px; /* Define o tamanho do círculo */
+    height: 5px; /* Define o tamanho do círculo */
     background-color: red; /* Define a cor do círculo */
     border-radius: 50%; /* Faz com que o elemento seja um círculo */
     cursor: pointer;
