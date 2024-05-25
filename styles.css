@@ -2,14 +2,14 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .map-container {
     position: absolute;
     width: 1330px;
     height: 1875px; /* Altura será ajustada automaticamente */
-    overflow: scroll; /* Adicionamos overflow: auto para permitir rolagem vertical */
+    overflow: hidden; /* Adicionamos overflow: auto para permitir rolagem vertical */
 }
 
 #map {

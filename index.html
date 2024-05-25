@@ -42,18 +42,19 @@
 	<div class="coordinates" id="coordinates"></div>
 
     <script>
-        document.addEventListener('mousemove', function(event) {
-            var x = event.clientX;
-            var y = event.clientY;
-            var width = window.innerWidth;
-            var height = document.querySelector('.map-container').clientHeight;
+			document.addEventListener('mousemove', function(event) {
+			var x = event.clientX;
+			var y = event.clientY;
+			var width = window.innerWidth;
+			var height = document.querySelector('.map-container').clientHeight;
+			var scrollTop = window.pageYOffset || document.documentElement.scrollTop; // Calcula o deslocamento vertical da página
 
-            var xPercent = (x / width) * 100;
-            var yPercent = (y / height) * 100;
+			var xPercent = (x / width) * 100;
+			var yPercent = ((y + scrollTop) / height) * 100; // Adiciona o deslocamento vertical da página
 
-            document.getElementById('coordinates').textContent = 
-                'X: ' + x.toFixed(2) + ' (' + xPercent.toFixed(2) + '%), Y: ' + y.toFixed(2) + ' (' + yPercent.toFixed(2) + '%)';
-        });
+			document.getElementById('coordinates').textContent = 
+				'X: ' + x.toFixed(2) + ' (' + xPercent.toFixed(2) + '%), Y: ' + y.toFixed(2) + ' (' + yPercent.toFixed(2) + '%)';
+		});
     </script>
 </body>
 </html>
