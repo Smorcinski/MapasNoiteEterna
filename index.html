@@ -8,12 +8,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+	<style>
+        .coordinates {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            z-index: 1000;
+        }
+    </style>
     <div class="map-container">
         <img src="nimor.png" alt="Mapa" id="map">
         <!-- Adicione os pontos de interesse (POIs) conforme necessário -->
-		<div class="poi" data-info="Circulo Preto 94" style="top: 68.21%; left: 27.99%;"></div>
+		<div class="poi" data-info="Circulo Preto 1" style="top: 10%; left: 10%;"></div>
     </div>
     <div id="tooltip" class="tooltip"></div>
+	
+	<div class="coordinates" id="coordinates"></div>
+
+    <script>
 	<script>
         document.addEventListener('mousemove', function(event) {
             var x = event.clientX;
