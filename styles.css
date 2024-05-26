@@ -60,7 +60,7 @@ body, html {
     transform: translate(-50%, -50%);
 }
 .poi:hover {
-    background-color: silver; /* Cor ao passar o mouse por cima */
+    background-color: darkred; /* Cor ao passar o mouse por cima */
 }
 .card {
 			z-index: 4;
