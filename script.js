@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var pois = document.querySelectorAll('.poi');
     var cards = document.querySelectorAll('.card');
-	var areas = document.querySelectorAll('area');
+    var areas = document.querySelectorAll('area');
 
     pois.forEach(function(poi) {
         poi.addEventListener('click', function(event) {
@@ -35,9 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             card.style.display = 'none';
         });
     });
-		// Selecione todas as áreas mapeadas
-	const areasMapeadas = document.querySelectorAll('area');
-	window.addEventListener('load', function() {
+
     // Função para redimensionar as coordenadas do image-map
     function redimensionarCoordenadas() {
         // Obtendo a largura e a altura da imagem original
@@ -45,8 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
         var alturaOriginal = 3750;
 
         // Obtendo a largura e a altura do contêiner
-        var larguraConteiner = 1330;
-        var alturaConteiner = 1881.310;
+        var container = document.querySelector('.map-container');
+        var larguraConteiner = container.clientWidth;
+        var alturaConteiner = container.clientHeight;
 
         // Calculando proporções de redimensionamento
         var proporcaoLargura = larguraConteiner / larguraOriginal;
@@ -75,28 +74,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Chamar a função quando a página for carregada
     redimensionarCoordenadas();
-});
 
-
-	// Adicione eventos de mouseover e mouseout para exibir e ocultar informações ao passar o mouse sobre as áreas
-	areasMapeadas.forEach(function(area) {
-		area.addEventListener("mouseover", function() {
-			var targetId = this.getAttribute("data-target");
-			var targetElement = document.getElementById(targetId);
-			if (targetElement) {
-				targetElement.style.display = "block";
-			}
-		});
-		area.addEventListener("mouseout", function() {
-			var targetId = this.getAttribute("data-target");
-			var targetElement = document.getElementById(targetId);
-			if (targetElement) {
-				targetElement.style.display = "none";
-			}
-		});
-	});
-
-	
-
-
+    // Adicione eventos de mouseover e mouseout para exibir e ocultar informações ao passar o mouse sobre as áreas
+    areas.forEach(function(area) {
+        area.addEventListener("mouseover", function() {
+            var targetId = this.getAttribute("data-target");
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.style.display = "block";
+            }
+        });
+        area.addEventListener("mouseout", function() {
+            var targetId = this.getAttribute("data-target");
+            var targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.style.display = "none";
+            }
+        });
+    });
 });
