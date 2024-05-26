@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var pois = document.querySelectorAll('.poi');
     var cards = document.querySelectorAll('.card');
+	var areas = document.querySelectorAll('area');
 
     pois.forEach(function(poi) {
         poi.addEventListener('click', function(event) {
@@ -34,4 +35,68 @@ document.addEventListener('DOMContentLoaded', function () {
             card.style.display = 'none';
         });
     });
+		// Selecione todas as áreas mapeadas
+	const areasMapeadas = document.querySelectorAll('area');
+	window.addEventListener('load', function() {
+    // Função para redimensionar as coordenadas do image-map
+    function redimensionarCoordenadas() {
+        // Obtendo a largura e a altura da imagem original
+        var larguraOriginal = 2651;
+        var alturaOriginal = 3750;
+
+        // Obtendo a largura e a altura do contêiner
+        var larguraConteiner = 1330;
+        var alturaConteiner = 1881.310;
+
+        // Calculando proporções de redimensionamento
+        var proporcaoLargura = larguraConteiner / larguraOriginal;
+        var proporcaoAltura = alturaConteiner / alturaOriginal;
+
+        // Atualizando as coordenadas de cada área do image-map
+        var areas = document.getElementsByTagName('area');
+        for (var i = 0; i < areas.length; i++) {
+            var coords = areas[i].getAttribute('coords').split(',');
+            for (var j = 0; j < coords.length; j++) {
+                // Ajustando as coordenadas x
+                if (j % 2 === 0) {
+                    coords[j] = Math.round(parseInt(coords[j]) * proporcaoLargura);
+                }
+                // Ajustando as coordenadas y
+                else {
+                    coords[j] = Math.round(parseInt(coords[j]) * proporcaoAltura);
+                }
+            }
+            areas[i].setAttribute('coords', coords.join(','));
+        }
+    }
+
+    // Chamar a função quando a janela for redimensionada
+    window.addEventListener('resize', redimensionarCoordenadas);
+
+    // Chamar a função quando a página for carregada
+    redimensionarCoordenadas();
+});
+
+
+	// Adicione eventos de mouseover e mouseout para exibir e ocultar informações ao passar o mouse sobre as áreas
+	areasMapeadas.forEach(function(area) {
+		area.addEventListener("mouseover", function() {
+			var targetId = this.getAttribute("data-target");
+			var targetElement = document.getElementById(targetId);
+			if (targetElement) {
+				targetElement.style.display = "block";
+			}
+		});
+		area.addEventListener("mouseout", function() {
+			var targetId = this.getAttribute("data-target");
+			var targetElement = document.getElementById(targetId);
+			if (targetElement) {
+				targetElement.style.display = "none";
+			}
+		});
+	});
+
+	
+
+
 });

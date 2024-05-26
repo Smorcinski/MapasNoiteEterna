@@ -4,7 +4,10 @@ body, html {
     height: 100%;
     overflow: auto;
 }
-
+.map-container img {
+    width: 100%;
+    height: auto;
+}
 .map-container {
     position: relative;
     width: 1330px;
@@ -22,8 +25,32 @@ body, html {
     object-fit: contain;
 }
 
+/* Adicione esta classe para ocultar inicialmente os elementos */
+.area-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 2; /* Garante que as imagens estejam acima do mapa */
+}
+
+/* Adicione estilos para os elementos com base nos IDs */
+#arquipelagodealura,
+#ilhadeginsed,
+#ilhaspiratas,
+#reinodalua,
+#reinodosol,
+#terrasabandonadas,
+#terrasdiversificadasdenimor,
+/* adicione mais IDs conforme necessário */
+{
+    display: none;
+    /* Adicione outros estilos conforme necessário */
+}
+
+
 .poi {
-	z-index: 4;
+	z-index: 3;
     position: absolute;
     width: 10px; /* Define o tamanho do círculo */
     height: 10px; /* Define o tamanho do círculo */
@@ -36,7 +63,7 @@ body, html {
     background-color: darkred; /* Cor ao passar o mouse por cima */
 }
 .card {
-			z-index: 3;
+			z-index: 4;
             display: none;
             position: absolute;
             background-color: transparent;
@@ -56,16 +83,5 @@ body, html {
     opacity: 0; /* Torna o botão invisível */
     cursor: pointer; /* Altera o cursor para indicar que é clicável */
 }
-		
-.tooltip {
-        display: none;
-        position: absolute;
-        background-color: rgba(255, 255, 255, 0.9); /* Adiciona transparência */
-        width: 100px;
-        height: 50px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona sombra */
-        border: none; /* Remove a borda */
-        padding: 10px;
-        font-weight: bold; /* Define o texto em negrito */
-    }
+
 	
