@@ -10,8 +10,8 @@ body, html {
 }
 .map-container {
     position: relative;
-    width: 1330px;
-    height: 1875px; /* Altura será ajustada automaticamente */
+    width: 100%;
+    height: autopx; /* Altura será ajustada automaticamente */
     overflow: hidden; /* Adicionamos overflow: auto para permitir rolagem vertical */
 }
 
